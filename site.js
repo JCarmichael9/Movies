@@ -39,10 +39,7 @@ const vue_app = Vue.createApp({
             github: "http://www.github.com/JCarmichael9/is219lee-p3"
          
       }
-    },
-      methods: {
-            /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
-      }
+    }
 })
 
 vue_app.mount("#vue_app")
