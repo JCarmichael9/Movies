@@ -119,3 +119,32 @@ body {
 }
 
 /* ADD YOUR LIKE AND DISLIKE HOVER/MOUSEOVER CSS CODE HERE */
+
+/* Make the score circular */
+.score {
+    border-radius: 50%;
+}
+
+/* Likes button: green background with white text */
+.likes {
+    background-color: #008700;
+    color: #ffffff;
+}
+
+/* Likes hover: light-green background and green text */
+.likes:hover {
+    background-color: #9edd87;
+    color: #008700;
+}
+
+/* Dislikes button: red background with white text */
+.dislikes {
+    background-color: #f65a5b;
+    color: #ffffff;
+}
+
+/* Dislikes hover: light-red background and red text */
+.dislikes:hover {
+    background-color: #fdd6d6;
+    color: #f65a5b;
+}
