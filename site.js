@@ -83,8 +83,6 @@ const vue_app = Vue.createApp({
                         case 12:
                               monthText = 'December'
                               break
-                        default:
-                              monthText = ''
                   }
                   return `${monthText} ${day}, ${year}`
             },
