@@ -45,32 +45,45 @@ const vue_app = Vue.createApp({
                   if (!Array.isArray(dateArray) || dateArray.length < 3) return ''
                   const monthNum = parseInt(dateArray[1], 10)
                   let monthText = ''
-                  if (monthNum === 1) {
-                        monthText = 'January'
-                  } else if (monthNum === 2) {
-                        monthText = 'February'
-                  } else if (monthNum === 3) {
-                        monthText = 'March'
-                  } else if (monthNum === 4) {
-                        monthText = 'April'
-                  } else if (monthNum === 5) {
-                        monthText = 'May'
-                  } else if (monthNum === 6) {
-                        monthText = 'June'
-                  } else if (monthNum === 7) {
-                        monthText = 'July'
-                  } else if (monthNum === 8) {
-                        monthText = 'August'
-                  } else if (monthNum === 9) {
-                        monthText = 'September'
-                  } else if (monthNum === 10) {
-                        monthText = 'October'
-                  } else if (monthNum === 11) {
-                        monthText = 'November'
-                  } else if (monthNum === 12) {
-                        monthText = 'December'
-                  } else {
-                        monthText = ''
+                  switch (monthNum) {
+                        case 1:
+                              monthText = 'January'
+                              break
+                        case 2:
+                              monthText = 'February'
+                              break
+                        case 3:
+                              monthText = 'March'
+                              break
+                        case 4:
+                              monthText = 'April'
+                              break
+                        case 5:
+                              monthText = 'May'
+                              break
+                        case 6:
+                              monthText = 'June'
+                              break
+                        case 7:
+                              monthText = 'July'
+                              break
+                        case 8:
+                              monthText = 'August'
+                              break
+                        case 9:
+                              monthText = 'September'
+                              break
+                        case 10:
+                              monthText = 'October'
+                              break
+                        case 11:
+                              monthText = 'November'
+                              break
+                        case 12:
+                              monthText = 'December'
+                              break
+                        default:
+                              monthText = ''
                   }
                   const day = dateArray[2]
                   const year = dateArray[0]
