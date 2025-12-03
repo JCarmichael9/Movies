@@ -39,7 +39,71 @@ const vue_app = Vue.createApp({
             github: "http://www.github.com/JCarmichael9/is219lee-p3"
          
       }
-    }
+    },
+      methods: {
+            getMonthText(dateArray) {
+                  if (!Array.isArray(dateArray) || dateArray.length < 3) return ''
+                  const monthNum = parseInt(dateArray[1], 10)
+                  let monthText = ''
+                  if (monthNum === 1) {
+                        monthText = 'January'
+                  } else if (monthNum === 2) {
+                        monthText = 'February'
+                  } else if (monthNum === 3) {
+                        monthText = 'March'
+                  } else if (monthNum === 4) {
+                        monthText = 'April'
+                  } else if (monthNum === 5) {
+                        monthText = 'May'
+                  } else if (monthNum === 6) {
+                        monthText = 'June'
+                  } else if (monthNum === 7) {
+                        monthText = 'July'
+                  } else if (monthNum === 8) {
+                        monthText = 'August'
+                  } else if (monthNum === 9) {
+                        monthText = 'September'
+                  } else if (monthNum === 10) {
+                        monthText = 'October'
+                  } else if (monthNum === 11) {
+                        monthText = 'November'
+                  } else if (monthNum === 12) {
+                        monthText = 'December'
+                  } else {
+                        monthText = ''
+                  }
+                  const day = dateArray[2]
+                  const year = dateArray[0]
+                  return monthText ? `${monthText} ${day}, ${year}` : ''
+            },
+
+            like(index) {
+                  if (!this.movies || !this.movies[index]) return
+                  this.movies[index].likes = (this.movies[index].likes || 0) + 1
+            },
+
+            dislike(index) {
+                  if (!this.movies || !this.movies[index]) return
+                  this.movies[index].dislikes = (this.movies[index].dislikes || 0) + 1
+            },
+
+            posterClick(index) {
+                  if (!this.movies || !this.movies[index]) return
+                  const movie = this.movies[index]
+                  if (!Array.isArray(movie.posters) || movie.posters.length === 0) return
+                  movie.posterindex = (typeof movie.posterindex === 'number' ? movie.posterindex : 0) + 1
+                  if (movie.posterindex >= movie.posters.length) {
+                        movie.posterindex = 0
+                  }
+            },
+
+            timeText(minutes) {
+                  if (typeof minutes !== 'number') minutes = parseInt(minutes, 10) || 0
+                  const hours = Math.trunc(minutes / 60)
+                  const mins = minutes % 60
+                  return `${hours}h ${mins}m`
+            }
+      }
 })
 
 vue_app.mount("#vue_app")
