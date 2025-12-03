@@ -42,8 +42,9 @@ const vue_app = Vue.createApp({
     },
       methods: {
             getMonthText(dateArray) {
-                  if (!Array.isArray(dateArray) || dateArray.length < 3) return ''
-                  const monthNum = parseInt(dateArray[1], 10)
+                  const monthNum = dateArray[1];
+                  const day = dateArray[2];
+                  const year =  dateArray[0];
                   let monthText = ''
                   switch (monthNum) {
                         case 1:
@@ -85,9 +86,7 @@ const vue_app = Vue.createApp({
                         default:
                               monthText = ''
                   }
-                  const day = dateArray[2]
-                  const year = dateArray[0]
-                  return monthText ? `${monthText} ${day}, ${year}` : ''
+                  return `${monthText} ${day}, ${year}`
             },
 
             like(index) {
