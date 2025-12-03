@@ -90,30 +90,22 @@ const vue_app = Vue.createApp({
             },
 
             like(index) {
-                  if (!this.movies || !this.movies[index]) return
-                  this.movies[index].likes = (this.movies[index].likes || 0) + 1
+                 this.movies[index].likes++;
             },
 
             dislike(index) {
-                  if (!this.movies || !this.movies[index]) return
-                  this.movies[index].dislikes = (this.movies[index].dislikes || 0) + 1
+                 this.movies[index].dislikes++;
             },
 
             posterClick(index) {
-                  if (!this.movies || !this.movies[index]) return
-                  const movie = this.movies[index]
-                  if (!Array.isArray(movie.posters) || movie.posters.length === 0) return
-                  movie.posterindex = (typeof movie.posterindex === 'number' ? movie.posterindex : 0) + 1
-                  if (movie.posterindex >= movie.posters.length) {
-                        movie.posterindex = 0
-                  }
+                  const postersLength = this.movies[index].posters.length;
+                  this.movies[index].posterindex = (this.movies[index].posterindex + 1) % postersLength;
             },
 
             timeText(minutes) {
-                  if (typeof minutes !== 'number') minutes = parseInt(minutes, 10) || 0
-                  const hours = Math.trunc(minutes / 60)
-                  const mins = minutes % 60
-                  return `${hours}h ${mins}m`
+                 const hours = Math.floor(minutes / 60);
+                 const mins = minutes % 60;
+                 return `${hours}h ${mins}m`;
             }
       }
 })
