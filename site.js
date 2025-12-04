@@ -88,16 +88,16 @@ const vue_app = Vue.createApp({
             },
 
             like(index) {
-                 this.movies[index].likes++;
+                 movies[index].likes++;
             },
 
             dislike(index) {
-                 this.movies[index].dislikes++;
+                 movies[index].dislikes++;
             },
 
             posterClick(index) {
-                  const postersLength = this.movies[index].posters.length;
-                  this.movies[index].posterindex = (this.movies[index].posterindex + 1) % postersLength;
+                  const postersLength = movies[index].posters.length;
+                  movies[index].posterindex = (movies[index].posterindex + 1) % postersLength;
             },
 
             timeText(minutes) {
