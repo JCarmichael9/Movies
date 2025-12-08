@@ -34,7 +34,7 @@ const vue_app = Vue.createApp({
             // This holds your movies.json data.
             movies: [],
             /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
-            title: "IMDB + James's Top 8 Movies",
+            title: "James's Childhood Movies",
             owner: "James",
             github: 'www.github.com/JCarmichael9/is219lee-p3',
          
@@ -88,11 +88,11 @@ const vue_app = Vue.createApp({
             },
 
             like(index) {
-                 movies[index].likes++;
+                 this.movies[index].likes++;
             },
 
             dislike(index) {
-                 movies[index].dislikes++;
+                 this.movies[index].dislikes++;
             },
 
             posterClick(index) {
