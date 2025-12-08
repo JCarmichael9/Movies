@@ -37,6 +37,7 @@ const vue_app = Vue.createApp({
             title: "James's Childhood Movies",
             owner: "James",
             github: 'www.github.com/JCarmichael9/is219lee-p3',
+                                    lightboxImage: null,
          
       }
     },
@@ -98,6 +99,14 @@ const vue_app = Vue.createApp({
             posterClick(index) {
                   const postersLength = this.movies[index].posters.length;
                   this.movies[index].posterindex = (this.movies[index].posterindex + 1) % postersLength;
+            },
+
+            openLightbox(imageUrl) {
+                  this.lightboxImage = imageUrl || null
+            },
+
+            closeLightbox() {
+                  this.lightboxImage = null
             },
 
             timeText(minutes) {
