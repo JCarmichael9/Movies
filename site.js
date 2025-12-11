@@ -36,7 +36,7 @@ const vue_app = Vue.createApp({
             /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
             title: "James's Childhood Movies",
             owner: "James",
-            github: 'www.github.com/JCarmichael9/is219lee-p3',
+            github: 'https://github.com/JCarmichael9/Movies',
                                     lightboxImage: null,
          
       }
